@@ -7,7 +7,7 @@ export interface IdentifyResponse {
   contact: {
     primaryContactId: number;
     emails: string[];
-    phoneNumbers: string[];
+    phoneNumbers: number[];
     secondaryContactIds: number[];
   };
 }
