@@ -15,8 +15,8 @@ datasource db {
 
 model Contact {
   id              Int      @id @default(autoincrement())
-  phoneNumber     Int?  @unique
-  email           String?  @unique
+  phoneNumber     Int?     
+  email           String?  
   linkedId        Int?
   linkPrecedence  LinkPrecedence
   createdAt       DateTime @default(now())
@@ -24,6 +24,7 @@ model Contact {
   deletedAt       DateTime?
 
   @@index([linkedId])
+  @@unique([email, phoneNumber]) 
 }
 
 enum LinkPrecedence {
